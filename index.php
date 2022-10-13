@@ -362,7 +362,50 @@
       <!-- ************************************* partie formulaire**************************** -->
       <section id="formulaire">
         <div class="contact">
-          <h1>Formulaire de contact</h1>
+          <h1>Reservation</h1>
+
+              
+
+                <label for="sub-menu-select">Choisir Jour</label>
+                  <select name="sub-menu" id="sub-menu-select">
+                      <option value="lundi">Lundi</option>
+                      <option value="mardi">Mardi</option>
+                      <option value="mercredi">Mercredi</option>
+                      <option value="jeudi">Jeudi</option>
+                      <option value="vendredi">Vendredi</option>
+                      <option value="samedi">Samedi</option>
+                  </select>
+                  
+
+               
+                <label class="service" for="sub-menu-select">Choisir Service</label>
+                  <select name="sub-menu" id="sub-menu-select">
+                      <option value="midi">Midi</option>
+                      <option value="soir">Soir</option>
+                  </select>
+                
+
+                  <label class="midi" for="sub-menu-select">Choisir Horaires</label>
+                  <select name="sub-menu" id="sub-menu-select">
+                      <option value="12h00">12h00</option>
+                      <option value="12h30">12h30</option>
+                      <option value="13h00">13h00</option>
+                      <option value="13h30">13h30</option>
+                      <option value="14h00">14h00</option>
+                  </select>   
+
+                  <label class="soir" for="sub-menu-select">Choisir Horaires</label>
+                  <select name="sub-menu" id="sub-menu-select">
+                      <option value="19h00">19h00</option>
+                      <option value="19h30">19h30</option>
+                      <option value="20h00">20h00</option>
+                      <option value="20h30">20h30</option>
+                      <option value="21h00">21h00</option>
+                      <option value="21h00">21h30</option>
+                      <option value="21h00">22h00</option>
+                  </select>   
+        
+              
 
           <form action="/action_page.php">
             <label for="fname">Nom & prénom</label>
@@ -373,12 +416,13 @@
               placeholder="Votre nom et prénom"
             />
 
-            <label for="sujet">Sujet</label>
+            <label for="nombredepersonne">Nombre De Personne</label>
             <input
-              type="text"
-              id="sujet"
-              name="sujet"
-              placeholder="L'objet de votre message"
+              type="number"
+              min=1
+              id="nombredepersonne"
+              name="nombredepersonne"
+              placeholder="Nombre De Personne"
             />
 
             <label for="emailAddress">Email</label>
@@ -389,13 +433,7 @@
               placeholder="Votre email"
             />
 
-            <label for="subject">Message</label>
-            <textarea
-              id="subject"
-              name="subject"
-              placeholder="Votre message"
-              style="height: 200px"
-            ></textarea>
+      
 
             <input type="submit" value="Envoyer" />
           </form>
