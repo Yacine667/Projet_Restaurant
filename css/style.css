@@ -190,7 +190,7 @@ a {
 
 /* ****************************** ACCueil******************************* */
 #accueil {
-  width: 40%;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -202,7 +202,7 @@ a {
 }
 
 #accueil h1 {
-  color: #ff00e6;
+  color: #d4c300;
   z-index: 1;
   text-align: center;
   font-size: 5em;
