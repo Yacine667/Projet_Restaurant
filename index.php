@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<?php
+  session_start();
+  $mardi =array("MardiEntree"=>"Soupe à la courgette","MardiPP"=>"Brochettes de boeuf/agneau saveur citronée","MardiDessert"=>"Tarte au citron meringuée");
+  $mercredi =array("mercrediEntree"=>"Tomates farcies au four","mercrediPP"=>"Lasagbes à la bolognaise","mercrediDessert"=>"Fondant chocolat coeur coulant");
+  $jeudi =array("jeudiEntree"=>"Galettes de flocons d'avoine au fromages","jeudiPP"=>"Risotto aux champignons et crevettes","jeudiDessert"=>"Créme brulée rapide");
+  $vendredi =array("vendrediEntree"=>"Mini vols au poulet","vendrediPP"=>"Maquereaux marinés au basilic cuits à la plancha","vendrediDessert"=>"Mousse au chocolat");
+  $samedi =array("samediEntree"=>"Soufflé au crabe","samediPP"=>"Risotto /pates aux fruit de mer","samediDessert"=>"Flan patissier");
+  $dimanche =array("dimancheEntree"=>"Quesadillas au fromage","dimanchePP"=>"Brochettes de poulet au lait et aux épices","dimancheDessert"=>"Panna cotta vanille citron");
+  
+  $days = array([$mardi,$mercredi,$jeudi,$vendredi,$samedi,$dimanche]);
+ ?>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -186,15 +197,15 @@
           <div class="accordeon-contenu">
             <ul>
               <h3>Entrée</h3>
-              <li>Soupe à la courgette</li>
+              <li><?php echo $mardi["MardiEntree"] ?></li>
             </ul>
             <ul>
               <h3>Plat principale</h3>
-              <li>Brochettes de boeuf/agneau saveur citronée</li>
+              <li><?php echo $mardi["MardiPP"] ?></li>
             </ul>
             <ul>
               <h3>Dessert</h3>
-              <li>Tarte au citron meringuée</li>
+              <li><?php echo $mardi["MardiDessert"] ?></li>
             </ul>
           </div>
         </div>
@@ -203,15 +214,15 @@
           <div class="accordeon-contenu">
             <ul>
               <h3>Entrée</h3>
-              <li>Tomates farcies au four</li>
+              <li><?php echo $mercredi["mercrediEntree"] ?></li>
             </ul>
             <ul>
               <h3>Plat principale</h3>
-              <li>Lasagbes à la bolognaise</li>
+              <li><?php echo $mercredi["mercrediPP"] ?></li>
             </ul>
             <ul>
               <h3>Dessert</h3>
-              <li>Fondant chocolat coeur coulant</li>
+              <li><?php echo $mercredi["mercrediDessert"] ?></li>
             </ul>
           </div>
         </div>
@@ -220,15 +231,15 @@
           <div class="accordeon-contenu">
             <ul>
               <h3>Entrée</h3>
-              <li>Galettes de flocons d'avoine au fromages</li>
+              <li><?php echo $jeudi["jeudiEntree"] ?></li>
             </ul>
             <ul>
               <h3>Plat principale</h3>
-              <li>Risotto aux champignons et crevettes</li>
+              <li><?php echo $jeudi["jeudiPP"] ?></li>
             </ul>
             <ul>
               <h3>Dessert</h3>
-              <li>Créme brulée rapide</li>
+              <li><?php echo $jeudi["jeudiDessert"] ?></li>
             </ul>
           </div>
         </div>
@@ -237,15 +248,15 @@
           <div class="accordeon-contenu">
             <ul>
               <h3>Entrée</h3>
-              <li>Mini vols au poulet</li>
+              <li><?php echo $vendredi["vendrediEntree"] ?></li>
             </ul>
             <ul>
               <h3>Plat principale</h3>
-              <li>Maquereaux marinés au basilic cuits à la plancha</li>
+              <li><?php echo $vendredi["vendrediPP"] ?></li>
             </ul>
             <ul>
               <h3>Dessert</h3>
-              <li>Mousse au chocolat</li>
+              <li><?php echo $vendredi["vendrediDessert"] ?></li>
             </ul>
           </div>
         </div>
@@ -254,15 +265,15 @@
           <div class="accordeon-contenu">
             <ul>
               <h3>Entrée</h3>
-              <li>Soufflé au crabe</li>
+              <li><?php echo $samedi["samediEntree"] ?></li>
             </ul>
             <ul>
               <h3>Plat principale</h3>
-              <li>Risotto /pates aux fruit de mer</li>
+              <li><?php echo $samedi["samediPP"] ?></li>
             </ul>
             <ul>
               <h3>Dessert</h3>
-              <li>Flan patissier</li>
+              <li><?php echo $samedi["samediDessert"] ?></li>
             </ul>
           </div>
         </div>
@@ -271,15 +282,15 @@
           <div class="accordeon-contenu">
             <ul>
               <h3>Entrée</h3>
-              <li>Quesadillas au fromage</li>
+              <li><?php echo $dimanche["dimancheEntree"] ?></li>
             </ul>
             <ul>
               <h3>Plat principale</h3>
-              <li>Brochettes de poulet au lait et aux épices</li>
+              <li><?php echo $dimanche["dimanchePP"] ?></li>
             </ul>
             <ul>
               <h3>Dessert</h3>
-              <li>Panna cotta vanille citron</li>
+              <li><?php echo $dimanche["dimancheDessert"] ?></li>
             </ul>
           </div>
         </div>
