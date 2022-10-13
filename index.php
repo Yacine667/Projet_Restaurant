@@ -9,6 +9,7 @@
   $dimanche =array("dimancheEntree"=>"Quesadillas au fromage","dimanchePP"=>"Brochettes de poulet au lait et aux épices","dimancheDessert"=>"Panna cotta vanille citron");
   
   $days = array([$mardi,$mercredi,$jeudi,$vendredi,$samedi,$dimanche]);
+  $_SESSION['days']= $days;
  ?>
 <html lang="fr">
   <head>
@@ -375,16 +376,16 @@
         <div class="contact">
           <h1>Reservation</h1>
 
-              
+          <form action="traitement.php?action=reserver" method="POST">    
 
                 <label for="sub_menu_select">Choisir Jour</label>
-                  <select name="sub_menu" id="sub_menu_select_day">
-                      <option value="lundi">Lundi</option>
-                      <option value="mardi">Mardi</option>
-                      <option value="mercredi">Mercredi</option>
-                      <option value="jeudi">Jeudi</option>
-                      <option value="vendredi">Vendredi</option>
-                      <option value="samedi">Samedi</option>
+                  <select name="day" id="sub_menu_select_day">
+                      <option value="$mardi">Mardi</option>
+                      <option value="$mercredi">Mercredi</option>
+                      <option value="$jeudi">Jeudi</option>
+                      <option value="$vendredi">Vendredi</option>
+                      <option value="$samedi">Samedi</option>
+                      <option value="$dimanche">Dimanche</option>
                   </select>
                   
 
@@ -399,7 +400,7 @@
 
                   <div class="midi" style="visibility:hidden;">
                     <label for="sub_menu_midi">Choisir Horaires</label>
-                  <select name="sub_menu" id="sub_menu_midi">
+                  <select name="horaire" id="sub_menu_midi">
                       <option value="12h00">12h00</option>
                       <option value="12h30">12h30</option>
                       <option value="13h00">13h00</option>
@@ -410,7 +411,7 @@
 
                 <div class="soir" style="visibility:hidden;" >
                   <label for="sub_menu_soir">Choisir Horaires</label>
-                  <select name="sub_menu" id="sub_menu_soir">
+                  <select name="horaire" id="sub_menu_soir">
                       <option value="19h00">19h00</option>
                       <option value="19h30">19h30</option>
                       <option value="20h00">20h00</option>
@@ -423,35 +424,35 @@
         
               
 
-          <form action="/action_page.php">
-            <label for="fname">Nom & prénom</label>
+          
+            <label for="clientName">Nom & prénom</label>
             <input
               type="text"
-              id="fname"
-              name="firstname"
+              id="clientName"
+              name="clientName"
               placeholder="Votre nom et prénom"
             />
 
-            <label for="nombredepersonne">Nombre De Personne</label>
+            <label for="clientNb">Nombre De Personne</label>
             <input
               type="number"
               min=1
-              id="nombredepersonne"
-              name="nombredepersonne"
+              id="clientNb"
+              name="clientNb"
               placeholder="Nombre De Personne"
             />
 
-            <label for="emailAddress">Email</label>
+            <label for="clientEmail">Email</label>
             <input
-              id="emailAddress"
+              id="clientEmail"
               type="email"
-              name="email"
+              name="clientEmail"
               placeholder="Votre email"
             />
 
       
 
-            <input type="submit" value="Envoyer" />
+            <input type="submit" name="submit" value="Envoyer" />
           </form>
         </div>
 
