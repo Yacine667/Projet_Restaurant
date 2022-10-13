@@ -166,3 +166,26 @@ function myFlip(item) {
     item.classList.toggle("is-flipped");
   });
 }
+
+// Menu rendez vous choix jour & horaires 
+
+
+
+function cache(val){
+  //document.getElementById("sub_menu_select").disabled = true;;
+   if (val == "midi"){
+
+  document.getElementsByClassName("midi")[0].style.visibility= "visible"}
+
+  else
+     document.getElementsByClassName("midi")[0].style.visibility= "hidden"
+
+   if (val == "soir"){
+     document.getElementsByClassName("soir")[0].style.visibility= "visible"}
+
+     else
+     document.getElementsByClassName("soir")[0].style.visibility= "hidden"
+
+}
+
+
