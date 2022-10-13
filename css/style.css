@@ -5,7 +5,13 @@
   box-sizing: 0;
   font-family: "Cinzel", serif;
 }
-
+table,
+th,
+td {
+  border: 1px solid black;
+  color: #83732d;
+  padding: 15px
+}
 body {
   min-height: fit-content;
   display: flex;
@@ -17,7 +23,7 @@ body {
   background-color: black;
   gap: 20px;
 }
-#container-global{
+#container-global {
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -45,15 +51,14 @@ body {
 }
 
 @media (max-width: 1000px) {
-#button-top{
-  opacity: 0.23;
-}
+  #button-top {
+    opacity: 0.23;
+  }
 
-#button-top:hover {
-  transition: 0.5s;
-  opacity: 1;
-}
-
+  #button-top:hover {
+    transition: 0.5s;
+    opacity: 1;
+  }
 }
 
 /* ***************************** partie menu ********************** */
@@ -137,11 +142,10 @@ a {
   color: #83732d;
   background-color: #262626;
 }
-#ouvrir{
+#ouvrir {
   position: absolute;
   display: block;
 }
-
 
 @media screen and (max-width: 1050px) {
   #menu_buttons_container ul {
@@ -214,10 +218,8 @@ a {
   position: absolute;
   filter: grayscale(0.8);
 }
-@media (max-width:1000px) {
-
+@media (max-width: 1000px) {
   #accueil h1 {
-   
     font-size: 3em;
   }
 
@@ -243,7 +245,7 @@ a {
 
 .youtube video {
   height: 100%;
- 
+
   filter: grayscale(0.5);
 }
 
@@ -294,8 +296,8 @@ a {
 .slider .slide .info {
   position: absolute;
   color: #ffe56f;
-  width: 50%;  
-   padding: 25%;
+  width: 50%;
+  padding: 25%;
   font-size: 2em;
 }
 
@@ -357,7 +359,7 @@ a {
 
 @media (max-width: 1000px) {
   .slider .slide .info {
-  width: 80%;
+    width: 80%;
     padding: 10%;
     font-size: 1.6em;
   }
@@ -548,7 +550,7 @@ a {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 15px;
-  padding: 30px;  
+  padding: 30px;
 }
 
 .card__body {
@@ -583,11 +585,11 @@ a {
   padding: 10px;
 }
 
-  input[type="text"],
-  textarea,
-  input[type="email"] {
+input[type="text"],
+textarea,
+input[type="email"] {
   width: 100%;
-  
+
   padding: 3%;
   border: 1px solid rgba(226, 222, 0, 0.212);
   border-radius: 4px;
@@ -635,7 +637,6 @@ input[type="submit"]:hover {
   backdrop-filter: blur(0px);
   border-radius: 10px;
   padding: 20px;
-
 }
 
 .logo {
@@ -695,7 +696,6 @@ h1 {
 }
 
 @media (max-width: 1000px) {
-
   #formulaire {
     flex-direction: column;
     height: auto;

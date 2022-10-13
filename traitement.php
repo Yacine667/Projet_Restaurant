@@ -25,8 +25,8 @@
                     var_dump($reservation);
                     
                 }
-            
             }
+            header("location:panier.php");
 
     }
 

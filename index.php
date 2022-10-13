@@ -8,8 +8,8 @@
   $samedi =array("samediEntree"=>"Soufflé au crabe","samediPP"=>"Risotto /pates aux fruit de mer","samediDessert"=>"Flan patissier");
   $dimanche =array("dimancheEntree"=>"Quesadillas au fromage","dimanchePP"=>"Brochettes de poulet au lait et aux épices","dimancheDessert"=>"Panna cotta vanille citron");
   
-  $days = array([$mardi,$mercredi,$jeudi,$vendredi,$samedi,$dimanche]);
-  $_SESSION['days']= $days;
+  $days = array($mardi,$mercredi,$jeudi,$vendredi,$samedi,$dimanche);
+  $_SESSION['days'][]= $days;
  ?>
 <html lang="fr">
   <head>
@@ -67,6 +67,11 @@
               <li>
                 <a href="#formulaire"
                   ><button class="menu_button">Contact</button></a
+                >
+              </li>
+              <li>
+                <a href="panier.php"
+                  ><button class="menu_button">reservation</button></a
                 >
               </li>
             </ul>
