@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <?php
   session_start();
-  $mardi =array("MardiEntree"=>"Soupe à la courgette","MardiPP"=>"Brochettes de boeuf/agneau saveur citronée","MardiDessert"=>"Tarte au citron meringuée");
+   $mardi =["MardiEntree"=>"Soupe à la courgette","MardiPP"=>"Brochettes de boeuf/agneau saveur citronée","MardiDessert"=>"Tarte au citron meringuée"];
+
+  // $mardi =array("MardiEntree"=>"Soupe à la courgette","MardiPP"=>"Brochettes de boeuf/agneau saveur citronée","MardiDessert"=>"Tarte au citron meringuée");
   $mercredi =array("mercrediEntree"=>"Tomates farcies au four","mercrediPP"=>"Lasagbes à la bolognaise","mercrediDessert"=>"Fondant chocolat coeur coulant");
   $jeudi =array("jeudiEntree"=>"Galettes de flocons d'avoine au fromages","jeudiPP"=>"Risotto aux champignons et crevettes","jeudiDessert"=>"Créme brulée rapide");
   $vendredi =array("vendrediEntree"=>"Mini vols au poulet","vendrediPP"=>"Maquereaux marinés au basilic cuits à la plancha","vendrediDessert"=>"Mousse au chocolat");
@@ -9,7 +11,13 @@
   $dimanche =array("dimancheEntree"=>"Quesadillas au fromage","dimanchePP"=>"Brochettes de poulet au lait et aux épices","dimancheDessert"=>"Panna cotta vanille citron");
   
   $days = array($mardi,$mercredi,$jeudi,$vendredi,$samedi,$dimanche);
-  $_SESSION['days'][]= $days;
+  $_SESSION['days']= $days;
+  $_SESSION['mardi'] = $mardi;
+  $_SESSION['mercredi'] = $mercredi;
+  $_SESSION['jeudi'] = $jeudi;
+  $_SESSION['vendredi'] = $vendredi;
+  $_SESSION['samedi'] = $samedi;
+  $_SESSION['dimanche'] = $dimanche;
  ?>
 <html lang="fr">
   <head>
@@ -385,12 +393,12 @@
 
                 <label for="sub_menu_select">Choisir Jour</label>
                   <select name="day" id="sub_menu_select_day">
-                      <option value="$mardi">Mardi</option>
-                      <option value="$mercredi">Mercredi</option>
-                      <option value="$jeudi">Jeudi</option>
-                      <option value="$vendredi">Vendredi</option>
-                      <option value="$samedi">Samedi</option>
-                      <option value="$dimanche">Dimanche</option>
+                      <option value="mardi">Mardi</option>
+                      <option value="mercredi">Mercredi</option>
+                      <option value="jeudi">Jeudi</option>
+                      <option value="vendredi">Vendredi</option>
+                      <option value="samedi">Samedi</option>
+                      <option value="dimanche">Dimanche</option>
                   </select>
                   
 

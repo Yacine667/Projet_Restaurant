@@ -1,5 +1,17 @@
 <?php
 session_start();
+$jour = (isset($_GET["jour"])) ? $_GET["jour"] : "";
+
+function afficherMenu($jour)
+{
+    if (!empty($jour)) {
+        echo "le menu de ".$jour." est composé de :<br>";
+        echo implode(' ', $_SESSION[$jour]);
+    } else {
+        echo '';
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +26,7 @@ session_start();
 </head>
 
 <body style="background-color: white;">
-<h1>Reservations :</h1>
+    <h1>Reservations :</h1>
     <?php
     // var_dump($_SESSION['days'][0]);
     //  si la clé "products" du tableau $-session n'existe pas OU ou cette clé existe mais ne contient aucune donnée  -->
@@ -40,14 +52,23 @@ session_start();
             "<td><a href='traitement.php?action=retirePersonne&id=$index'><i class='fa-solid fa-minus' style='color:black'></i></a>" . $reservation['clientNb'] . "<a  href='traitement.php?action=addPersonne&id=$index'><i class='fa-solid fa-plus' style='color:green'></i></a></td>",
             "<td>" . $reservation['horaire'] . "</td>",
             "<td>" . $reservation['day'] . "</td>",
-            "<td><a href='traitement.php?action=deleteReservation&id=$index'><button>supprimer</button></a></td>";
+            "<td><a href='traitement.php?action=deleteReservation&id=$index'><button>supprimer</button></a>
+            <a href='traitement.php?action=afficherMenu&id=$index&jour=" . $reservation['day'] . "'><button>Voir menu</button></a>
+            <a href='panier.php?id=$index&jour=" . $reservation['day'] . "'><button>Voir menu</button></a>
+            
+            </td>";
             "</tr>";
         }
         "</table>";
     }
     ?>
-        <a href="traitement.php?action=deleteAll"><button type='submit' name='delete-button' class='btn btn-danger'>supprimer</button></a>
-        <a href="index.php"><button>Accueil</button></a>
+    <a href="traitement.php?action=deleteAll"><button type='submit' name='delete-button' class='btn btn-danger'>Vider</button></a>
+    <a href="index.php"><button>Accueil</button></a>
+
+
+    <div>
+        <h2><?php echo afficherMenu($jour)  ?></h2>
+    </div>
 
 </body>
 

@@ -56,4 +56,8 @@ switch ($action) {
         header("Location:panier.php");
 
         break;
+    case 'afficherMenu':
+        // si la valeur de l'input jour est egal a la valeur d'une variable stocker dans la session days on fait 
+        // afficher le menu de ce jour 
+        break;
 }
