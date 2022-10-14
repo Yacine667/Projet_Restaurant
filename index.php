@@ -487,7 +487,7 @@
           <div id="info-contenu">
             <ul class="info">
               <li class="info">
-                Horraires d'ouvertures : <br />
+                Horaires d'ouvertures : <br />
                 Du lundi au samedi 11h-23h <br /><br />
               </li>
               <li class="info">
