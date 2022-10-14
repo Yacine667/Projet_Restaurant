@@ -36,5 +36,24 @@ switch ($action) {
     case 'deleteReservation':
         unset($_SESSION["reservations"][$id]);
         header("Location:panier.php");
+        header("location:panier.php");
+        break;
+
+    case "addPersonne":
+
+        $_SESSION["reservations"][$id]['clientNb']++;
+        header("Location:panier.php");
+
+        break;
+
+    case "retirePersonne":
+
+        $newclientNb = $_SESSION["reservations"][$id]['clientNb']--;
+
+        if ($newclientNb == 1) {
+            unset($_SESSION["reservations"][$id]);
+        }
+        header("Location:panier.php");
+
         break;
 }

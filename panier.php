@@ -8,6 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
     <title>liste des reservations</title>
 </head>
@@ -36,7 +37,13 @@ session_start();
             "<td>" . $index . "</td>",
             "<td>" . $reservation['clientName'] . "</td>",
             "<td>" . $reservation['clientEmail'] . "</td>",
-            "<td>" . $reservation['clientNb'] . "</td>",
+
+      
+
+            "<td><a href='traitement.php?action=retirePersonne&id=$index'><i class='fa-solid fa-minus'></i></a>" . $reservation['clientNb'] . "<a  href='traitement.php?action=addPersonne&id=$index'><i class='fa-solid fa-plus'></i></a></td>",
+
+
+
             "<td>" . $reservation['horaire'] . "</td>",
             "<td>" . $reservation['day'] . "</td>",
             "<td><a href='traitement.php?action=deleteReservation&id=$index'><button>supprimer</button></a></td>";
