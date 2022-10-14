@@ -37,13 +37,7 @@ session_start();
             "<td>" . $index . "</td>",
             "<td>" . $reservation['clientName'] . "</td>",
             "<td>" . $reservation['clientEmail'] . "</td>",
-
-      
-
-            "<td><a href='traitement.php?action=retirePersonne&id=$index'><i class='fa-solid fa-minus'></i></a>" . $reservation['clientNb'] . "<a  href='traitement.php?action=addPersonne&id=$index'><i class='fa-solid fa-plus'></i></a></td>",
-
-
-
+            "<td><a href='traitement.php?action=retirePersonne&id=$index'><i class='fa-solid fa-minus' style='color:black'></i></a>" . $reservation['clientNb'] . "<a  href='traitement.php?action=addPersonne&id=$index'><i class='fa-solid fa-plus' style='color:green'></i></a></td>",
             "<td>" . $reservation['horaire'] . "</td>",
             "<td>" . $reservation['day'] . "</td>",
             "<td><a href='traitement.php?action=deleteReservation&id=$index'><button>supprimer</button></a></td>";
