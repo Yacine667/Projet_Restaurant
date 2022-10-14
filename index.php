@@ -488,7 +488,7 @@
             <ul class="info">
               <li class="info">
                 Horaires d'ouvertures : <br />
-                Du lundi au samedi 11h-23h <br /><br />
+                Du Mardi au Dimanche <br />12h-14h / 19h00-22h00 <br /><br />
               </li>
               <li class="info">
                 Adresse : <br />Parc des Chantiers Bd Léon Bureau <br />
