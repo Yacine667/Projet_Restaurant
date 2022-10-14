@@ -5,8 +5,8 @@ $jour = (isset($_GET["jour"])) ? $_GET["jour"] : "";
 function afficherMenu($jour)
 {
     if (!empty($jour)) {
-        echo "le menu de ".$jour." est composé de :<br>";
-        echo implode(' ', $_SESSION[$jour]);
+        echo "<h3>le menu de ".$jour." est composé de :</h3><br>";
+        echo"<h5>". implode('<br>', $_SESSION[$jour])."</h5>";
     } else {
         echo '';
     }
@@ -25,8 +25,18 @@ function afficherMenu($jour)
     <title>liste des reservations</title>
 </head>
 
-<body style="background-color: white;">
-    <h1>Reservations :</h1>
+<body >
+    <header id="header_panier">
+    <div id="menu_logo">
+            <a href=index.php>
+              <i class="fa-solid fa-wheat-awn"></i>
+              <p>le Quai des Machines</p>
+            </a>
+          </div>
+
+    <a href="traitement.php?action=deleteAll"><button type='submit' name='delete-button' class='btnsupprimer'>annuler mes reservations</button></a>
+    </header>
+    <h1 style="color: white;">Reservations :</h1>
     <?php
     // var_dump($_SESSION['days'][0]);
     //  si la clé "products" du tableau $-session n'existe pas OU ou cette clé existe mais ne contient aucune donnée  -->
@@ -49,12 +59,11 @@ function afficherMenu($jour)
             "<td>" . $index . "</td>",
             "<td>" . $reservation['clientName'] . "</td>",
             "<td>" . $reservation['clientEmail'] . "</td>",
-            "<td><a href='traitement.php?action=retirePersonne&id=$index'><i class='fa-solid fa-minus' style='color:black'></i></a>" . $reservation['clientNb'] . "<a  href='traitement.php?action=addPersonne&id=$index'><i class='fa-solid fa-plus' style='color:green'></i></a></td>",
+            "<td><a href='traitement.php?action=retirePersonne&id=$index'><i class='fa-solid fa-minus' style='color:red'></i></a>" . $reservation['clientNb'] . "<a  href='traitement.php?action=addPersonne&id=$index'><i class='fa-solid fa-plus' style='color:green'></i></a></td>",
             "<td>" . $reservation['horaire'] . "</td>",
             "<td>" . $reservation['day'] . "</td>",
-            "<td><a href='traitement.php?action=deleteReservation&id=$index'><button>supprimer</button></a>
-            <a href='traitement.php?action=afficherMenu&id=$index&jour=" . $reservation['day'] . "'><button>Voir menu</button></a>
-            <a href='panier.php?id=$index&jour=" . $reservation['day'] . "'><button>Voir menu</button></a>
+            "<td><a href='traitement.php?action=deleteReservation&id=$index'><button class='btnsupprimer'>Annuler</button></a>
+            <a href='panier.php?id=$index&jour=" . $reservation['day'] . "'><button class='btnVoir'>Voir menu</button></a>
             
             </td>";
             "</tr>";
@@ -62,11 +71,10 @@ function afficherMenu($jour)
         "</table>";
     }
     ?>
-    <a href="traitement.php?action=deleteAll"><button type='submit' name='delete-button' class='btn btn-danger'>Vider</button></a>
-    <a href="index.php"><button>Accueil</button></a>
+    
 
 
-    <div>
+    <div class="panier_menudiv">
         <h2><?php echo afficherMenu($jour)  ?></h2>
     </div>
 
