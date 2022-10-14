@@ -5,13 +5,7 @@
   box-sizing: 0;
   font-family: "Cinzel", serif;
 }
-table,
-th,
-td {
-  border: 1px solid black;
-  color: #83732d;
-  padding: 15px
-}
+
 body {
   min-height: fit-content;
   display: flex;
@@ -742,4 +736,49 @@ footer a {
 
 .fa-solid {
   color: #000;
+}
+
+
+
+/* **********************************page panier.php */
+#header_panier{
+  display: flex;
+  flex-direction: row;
+  background-color: #262626;
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  top: 0;
+}
+.panier_menudiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #83732d;
+  width: 50%;
+}
+table,
+th,
+td {
+  border: 1px solid whitesmoke;
+  color: #83732d;
+  padding: 15px
+}
+.btnsupprimer{
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+}
+.btnVoir{
+  background-color: rgba(74, 92, 40, 0.288);
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid white;
+  cursor: pointer;
 }
