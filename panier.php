@@ -28,6 +28,7 @@ session_start();
         "<th>Nombre</th>",
         "<th>heure</th>",
         "<th>Jour</th>",
+        "<th>Action</th>",
         "</tr>";
 
         foreach ($_SESSION['reservations'] as $index => $reservation) {
@@ -38,11 +39,14 @@ session_start();
             "<td>" . $reservation['clientNb'] . "</td>",
             "<td>" . $reservation['horaire'] . "</td>",
             "<td>" . $reservation['day'] . "</td>",
+            "<td><a href='traitement.php?action=deleteReservation&id=$index'><button>supprimer</button></a></td>";
             "</tr>";
         }
         "</table>";
     }
     ?>
+        <a href="traitement.php?action=deleteAll"><button type='submit' name='delete-button' class='btn btn-danger'>supprimer</button></a>
+        <a href="index.php"><button>Accueil</button></a>
 
 </body>
 
