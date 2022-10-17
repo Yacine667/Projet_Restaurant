@@ -45,7 +45,7 @@ function afficherMenu($jour)
     } else {
         echo "<table>",
         "<tr>",
-        "<th>ID</th>",
+        
         "<th>Nom</th>",
         "<th>Email</th>",
         "<th>Nombre</th>",
@@ -56,7 +56,7 @@ function afficherMenu($jour)
 
         foreach ($_SESSION['reservations'] as $index => $reservation) {
             echo "<tr>",
-            "<td>" . $index . "</td>",
+            
             "<td>" . $reservation['clientName'] . "</td>",
             "<td>" . $reservation['clientEmail'] . "</td>",
             "<td><a href='traitement.php?action=retirePersonne&id=$index'><i class='fa-solid fa-minus' style='color:red'></i></a>" . $reservation['clientNb'] . "<a  href='traitement.php?action=addPersonne&id=$index'><i class='fa-solid fa-plus' style='color:green'></i></a></td>",

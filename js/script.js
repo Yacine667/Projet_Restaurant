@@ -175,15 +175,20 @@ function cache(val){
   //document.getElementById("sub_menu_select").disabled = true;;
    if (val == "midi"){
 
-  document.getElementsByClassName("midi")[0].style.visibility= "visible"}
-
+   document.getElementsByClassName("midi")[0].style.visibility= "visible"
+   var midi = document.getElementById("sub_menu_midi")
+   midi.name = 'horaire'
+}
+  
   else
      document.getElementsByClassName("midi")[0].style.visibility= "hidden"
 
    if (val == "soir"){
-     document.getElementsByClassName("soir")[0].style.visibility= "visible"}
-
-     else
+     document.getElementsByClassName("soir")[0].style.visibility= "visible"
+     var soir = document.getElementById("sub_menu_soir")
+     soir.name ="horaire"
+    }
+  else
      document.getElementsByClassName("soir")[0].style.visibility= "hidden"
 
 }

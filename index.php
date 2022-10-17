@@ -416,7 +416,7 @@
               <div class="midi" >
 
                 <label for="sub_menu_midi">Choisir Horaires</label>
-                  <select name="horaire" id="sub_menu_midi">
+                  <select name="" id="sub_menu_midi">
                       <option value="12h00">12h00</option>
                       <option value="12h30">12h30</option>
                       <option value="13h00">13h00</option>
@@ -429,14 +429,14 @@
               <div class="soir" >
 
                 <label for="sub_menu_soir">Choisir Horaires</label>
-                  <select name="horaire" id="sub_menu_soir">
+                  <select name="" id="sub_menu_soir">
                       <option value="19h00">19h00</option>
                       <option value="19h30">19h30</option>
                       <option value="20h00">20h00</option>
                       <option value="20h30">20h30</option>
                       <option value="21h00">21h00</option>
-                      <option value="21h00">21h30</option>
-                      <option value="21h00">22h00</option>
+                      <option value="21h30">21h30</option>
+                      <option value="22h00">22h00</option>
                   </select>  
 
                 </div>
