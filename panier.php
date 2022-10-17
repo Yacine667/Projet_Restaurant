@@ -2,6 +2,7 @@
 session_start();
 $jour = (isset($_GET["jour"])) ? $_GET["jour"] : "";
 
+
 function afficherMenu($jour)
 {
     if (!empty($jour)) {
@@ -46,6 +47,7 @@ function afficherMenu($jour)
         echo "<table>",
         "<tr>",
         
+        "<th>ID</th>",
         "<th>Nom</th>",
         "<th>Email</th>",
         "<th>Nombre</th>",
@@ -56,12 +58,34 @@ function afficherMenu($jour)
 
         foreach ($_SESSION['reservations'] as $index => $reservation) {
             echo "<tr>",
-            
+
+            "<form method = POST action=traitement.php?action=changeJour&id=$index>",
+            "<td>" . $index . "</td>",
             "<td>" . $reservation['clientName'] . "</td>",
             "<td>" . $reservation['clientEmail'] . "</td>",
             "<td><a href='traitement.php?action=retirePersonne&id=$index'><i class='fa-solid fa-minus' style='color:red'></i></a>" . $reservation['clientNb'] . "<a  href='traitement.php?action=addPersonne&id=$index'><i class='fa-solid fa-plus' style='color:green'></i></a></td>",
+
+
             "<td>" . $reservation['horaire'] . "</td>",
-            "<td>" . $reservation['day'] . "</td>",
+
+
+            
+            "<td><select name='day' id='sub_menu_select'>
+            <option value='defaut'>". $reservation['day'] ."</option>
+            <option value='Mardi'>Mardi</option>
+            <option value='mercredi'>Mercredi</option>
+            <option value='jeudi'>Jeudi</option>
+            <option value='vendredi'>Vendredi</option>
+            <option value='samedi'>Samedi</option>
+            <option value='dimanche'>Dimanche</option>
+            </select><button type=submit name=submitJour >Modifier</button></td>",
+
+            "</form>"
+        ,
+
+
+
+
             "<td><a href='traitement.php?action=deleteReservation&id=$index'><button class='btnsupprimer'>Annuler</button></a>
             <a href='panier.php?id=$index&jour=" . $reservation['day'] . "'><button class='btnVoir'>Voir menu</button></a>
             

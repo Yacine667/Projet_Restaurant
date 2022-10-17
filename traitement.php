@@ -3,6 +3,7 @@ session_start();
 
 $action = $_GET["action"];
 $id = (isset($_GET["id"])) ? $_GET["id"] : "";
+$newDay = (isset($_POST["day"])) ? $_POST["day"] : "";
 
 switch ($action) {
     case 'reserver':
@@ -56,7 +57,15 @@ switch ($action) {
         header("Location:panier.php");
 
         break;
-    case 'afficherMenu':
-        
+
+    case "changeJour":
+
+        $_SESSION["reservations"][$id]['day']=$newDay;
+        header("Location:panier.php");
+        var_dump($newDay);
+
         break;
+
+
+        
 }
