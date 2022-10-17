@@ -47,74 +47,67 @@ function afficherMenu($jour)
         echo "<table>",
         "<tr>",
         
-        "<th>ID</th>",
-        "<th>Nom</th>",
-        "<th>Email</th>",
-        "<th>Nombre</th>",
-        "<th>heure</th>",
-        "<th>Jour</th>",
-        "<th>Action</th>",
-        "</tr>";
+                "<th>ID</th>",
+                "<th>Nom</th>",
+                "<th>Email</th>",
+                "<th>Nombre</th>",
+                "<th>heure</th>",
+                "<th>Jour</th>",
+                "<th>Action</th>",
+                "</tr>";
 
         foreach ($_SESSION['reservations'] as $index => $reservation) {
             echo "<tr>",
-
            
-            "<td>" . $index . "</td>",
-            "<td>" . $reservation['clientName'] . "</td>",
-            "<td>" . $reservation['clientEmail'] . "</td>",
-            "<td><a href='traitement.php?action=retirePersonne&id=$index'><i class='fa-solid fa-minus' style='color:red'></i></a>" . $reservation['clientNb'] . "<a  href='traitement.php?action=addPersonne&id=$index'><i class='fa-solid fa-plus' style='color:green'></i></a></td>",
+                        "<td>" . $index . "</td>",
+                        "<td>" . $reservation['clientName'] . "</td>",
+                        "<td>" . $reservation['clientEmail'] . "</td>",
+                        "<td><a href='traitement.php?action=retirePersonne&id=$index'><i class='fa-solid fa-minus' style='color:red'></i></a>" . $reservation['clientNb'] . "<a  href='traitement.php?action=addPersonne&id=$index'><i class='fa-solid fa-plus' style='color:green'></i></a></td>",
 
-            "<form method = POST action=traitement.php?action=changeHour&id=$index>",
-            "<td><select name='horaire' id='sub_menu_select'>
-            <option value='defaut'>". $reservation['horaire'] .
-            "</option>
-            <optgroup label='Midi'/>
-            <option value='12h00'>12h00</option>
-            <option value='12h30'>12h30</option>
-            <option value='13h00'>13h00</option>
-            <option value='13h30'>13h30</option>
-            <option value='14h00'>14h00</option>
-            <optgroup label='Soir'/>
-            <option value='19h00'>19h00</option>
-            <option value='19h30'>19h30</option>
-            <option value='20h00'>20h00</option>
-            <option value='20h30'>20h30</option>
-            <option value='21h00'>21h00</option>
-            <option value='21h30'>21h30</option>
-            <option value='22h00'>22h00</option>            
-            </select><button type=submit name=submitJour >Modifier</button></td>",
-            "</form>"
-            ,
-    
-            
+                        "<form method = POST action=traitement.php?action=changeHour&id=$index>",
+                        "<td><select name='horaire' id='sub_menu_select'>
+                        <option value=". $reservation['horaire'] .">". $reservation['horaire'] .
+                        "</option>
+                        <optgroup label='Midi'/>
+                        <option value='12h00'>12h00</option>
+                        <option value='12h30'>12h30</option>
+                        <option value='13h00'>13h00</option>
+                        <option value='13h30'>13h30</option>
+                        <option value='14h00'>14h00</option>
+                        <optgroup label='Soir'/>
+                        <option value='19h00'>19h00</option>
+                        <option value='19h30'>19h30</option>
+                        <option value='20h00'>20h00</option>
+                        <option value='20h30'>20h30</option>
+                        <option value='21h00'>21h00</option>
+                        <option value='21h30'>21h30</option>
+                        <option value='22h00'>22h00</option>            
+                        </select><button type=submit name=submitJour >Modifier</button></td>",
+                        "</form>",
 
-            "<form method = POST action=traitement.php?action=changeJour&id=$index>",
+                        "<form method = POST action=traitement.php?action=changeJour&id=$index>",
+                        "<td><select name='day' id='sub_menu_select'>
+                        <option value=". $reservation['day'].">". $reservation['day'] ."</option>
+                        <option value='Mardi'>Mardi</option>
+                        <option value='mercredi'>Mercredi</option>
+                        <option value='jeudi'>Jeudi</option>
+                        <option value='vendredi'>Vendredi</option>
+                        <option value='samedi'>Samedi</option>
+                        <option value='dimanche'>Dimanche</option>
+                        </select><button type=submit name=submitHour >Modifier</button></td>",
+                        "</form>",
+                        "<td><a href='traitement.php?action=deleteReservation&id=$index'><button class='btnsupprimer'>Annuler</button></a>
+                        <a href='panier.php?id=$index&jour=" . $reservation['day'] . "'><button class='btnVoir'>Voir menu</button></a>            
+                        </td>";
 
-            "<td><select name='day' id='sub_menu_select'>
-            <option value='defaut'>". $reservation['day'] ."</option>
-            <option value='Mardi'>Mardi</option>
-            <option value='mercredi'>Mercredi</option>
-            <option value='jeudi'>Jeudi</option>
-            <option value='vendredi'>Vendredi</option>
-            <option value='samedi'>Samedi</option>
-            <option value='dimanche'>Dimanche</option>
-            </select><button type=submit name=submitHour >Modifier</button></td>",
-
-            "</form>"
-        ,
-
-
-
-
-            "<td><a href='traitement.php?action=deleteReservation&id=$index'><button class='btnsupprimer'>Annuler</button></a>
-            <a href='panier.php?id=$index&jour=" . $reservation['day'] . "'><button class='btnVoir'>Voir menu</button></a>
-            
-            </td>";
             "</tr>";
+
         }
+
         "</table>";
+
     }
+
     ?>
     
 
