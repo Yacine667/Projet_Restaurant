@@ -59,17 +59,38 @@ function afficherMenu($jour)
         foreach ($_SESSION['reservations'] as $index => $reservation) {
             echo "<tr>",
 
-            "<form method = POST action=traitement.php?action=changeJour&id=$index>",
+           
             "<td>" . $index . "</td>",
             "<td>" . $reservation['clientName'] . "</td>",
             "<td>" . $reservation['clientEmail'] . "</td>",
             "<td><a href='traitement.php?action=retirePersonne&id=$index'><i class='fa-solid fa-minus' style='color:red'></i></a>" . $reservation['clientNb'] . "<a  href='traitement.php?action=addPersonne&id=$index'><i class='fa-solid fa-plus' style='color:green'></i></a></td>",
 
-
-            "<td>" . $reservation['horaire'] . "</td>",
-
-
+            "<form method = POST action=traitement.php?action=changeHour&id=$index>",
+            "<td><select name='horaire' id='sub_menu_select'>
+            <option value='defaut'>". $reservation['horaire'] .
+            "</option>
+            <optgroup label='Midi'/>
+            <option value='12h00'>12h00</option>
+            <option value='12h30'>12h30</option>
+            <option value='13h00'>13h00</option>
+            <option value='13h30'>13h30</option>
+            <option value='14h00'>14h00</option>
+            <optgroup label='Soir'/>
+            <option value='19h00'>19h00</option>
+            <option value='19h30'>19h30</option>
+            <option value='20h00'>20h00</option>
+            <option value='20h30'>20h30</option>
+            <option value='21h00'>21h00</option>
+            <option value='21h30'>21h30</option>
+            <option value='22h00'>22h00</option>            
+            </select><button type=submit name=submitJour >Modifier</button></td>",
+            "</form>"
+            ,
+    
             
+
+            "<form method = POST action=traitement.php?action=changeJour&id=$index>",
+
             "<td><select name='day' id='sub_menu_select'>
             <option value='defaut'>". $reservation['day'] ."</option>
             <option value='Mardi'>Mardi</option>
@@ -78,7 +99,7 @@ function afficherMenu($jour)
             <option value='vendredi'>Vendredi</option>
             <option value='samedi'>Samedi</option>
             <option value='dimanche'>Dimanche</option>
-            </select><button type=submit name=submitJour >Modifier</button></td>",
+            </select><button type=submit name=submitHour >Modifier</button></td>",
 
             "</form>"
         ,

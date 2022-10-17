@@ -4,6 +4,7 @@ session_start();
 $action = $_GET["action"];
 $id = (isset($_GET["id"])) ? $_GET["id"] : "";
 $newDay = (isset($_POST["day"])) ? $_POST["day"] : "";
+$newHour = (isset($_POST["horaire"])) ? $_POST["horaire"] : "";
 
 switch ($action) {
     case 'reserver':
@@ -62,9 +63,19 @@ switch ($action) {
 
         $_SESSION["reservations"][$id]['day']=$newDay;
         header("Location:panier.php");
-        var_dump($newDay);
 
         break;
+
+    case "changeHour":
+
+        $_SESSION["reservations"][$id]['horaire']=$newHour;
+        header("Location:panier.php");
+    
+        break;
+    
+
+
+
 
 
         
