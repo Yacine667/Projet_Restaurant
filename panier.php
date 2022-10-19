@@ -46,6 +46,7 @@ function afficherMenu($jour)
         echo "<p>Aucune reservation en session</p>";
     } else {
         echo "<table>",
+        "<thead>",
         "<tr>",
         
                 "<th>ID</th>",
@@ -55,8 +56,9 @@ function afficherMenu($jour)
                 "<th>heure</th>",
                 "<th>Jour</th>",
                 "<th>Action</th>",
-                "</tr>";
-
+                "</tr>",
+        "</thead>";
+        "<tbody>";
         foreach ($_SESSION['reservations'] as $index => $reservation) {
             echo "<tr>",
            
@@ -89,24 +91,21 @@ function afficherMenu($jour)
                         "<form method = POST action=traitement.php?action=changeJour&id=$index>",
                         "<td><div class='colonne'><select name='day' class='sub_menu_select'>
                         <option value=". $reservation['day'].">". $reservation['day'] ."</option>
-                        <option value='mardi'>Mardi</option>
-                        <option value='mercredi'>Mercredi</option>
-                        <option value='jeudi'>Jeudi</option>
-                        <option value='vendredi'>Vendredi</option>
-                        <option value='samedi'>Samedi</option>
-                        <option value='dimanche'>Dimanche</option>
+                        <option class='optionDay' value='mardi'>Mardi</option>
+                        <option class='optionDay' value='mercredi'>Mercredi</option>
+                        <option class='optionDay' value='jeudi'>Jeudi</option>
+                        <option class='optionDay' value='vendredi'>Vendredi</option>
+                        <option class='optionDay' value='samedi'>Samedi</option>
+                        <option class='optionDay' value='dimanche'>Dimanche</option>
                         </select><button class='edit' type=submit name=submitHour><i class='fa-solid fa-pen-to-square'></i></button></div></td>",
                         "</form>",
                         "<td id='champ_btn'><div class='colonne'><a href='traitement.php?action=deleteReservation&id=$index'><button class='btnsupprimer'>Annuler</button></a>
                         <a href='panier.php?id=$index&jour=" . $reservation['day'] . "'><button class='btnVoir'>menu</button></a> </div>           
                         </td>";
-
             "</tr>";
-
+            "</tbody>";
         }
-
         "</table>";
-
     }
 
     ?>
@@ -119,4 +118,5 @@ function afficherMenu($jour)
 </body>
 <script src="js/script.js"></script>
 <script>compareValue();</script>
+<script>compareValueDay();</script>
 </html>

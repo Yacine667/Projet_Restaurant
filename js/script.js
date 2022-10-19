@@ -207,20 +207,25 @@ function compareValue(){
   console.log(opti);
    var s =document.getElementById('select_hour');
    var x = s.options.length;
+   console.log(x)
    var i =0;
   while(i++ < x ){
-   console.log (s.options[i].text)
+  //  console.log (s.options[i].text)
    if((s.options[i].text) ===(s.options[s.selectedIndex].text)){
     var selectvalue = (s.options[s.selectedIndex].text);
     // selectvalue.style.dispaly = none;
     // opti[i-1].style.display = 'none';
     opti[i-1].setAttribute("selected", "selected");
-    
+    console.log(x)
    }
-
+   console.log(x)
   }
-  console.log(x)
-      console.log(s.options[s.selectedIndex].text)
-    
+  
+  //     console.log(s.options[s.selectedIndex].text)
 }
 
+function compareValueDay(){
+  var optiDay = document.querySelectorAll('.optionDay');
+  console.log(optiDay)
+}
+compareValueDay()

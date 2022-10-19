@@ -827,12 +827,22 @@ footer a {
   background-color: #83732d;
   width: 50%;
 }
-table,
-th,
-td {
+table{
   border: 1px solid whitesmoke;
+  background-color: aliceblue;
+}
+th{
   color: #83732d;
-  padding: 15px
+  background-color: #262626;
+  padding: 5px;
+}
+td{
+  padding: 15px;
+  color: aliceblue;
+  background-color: #262626;
+}
+table tr:nth-child(2n){
+  background-color:aquamarine;
 }
 .btnsupprimer{
   background-color: red;
@@ -858,10 +868,19 @@ td {
   justify-content: center;
   gap: 5px;
 }
+select option{
+  background: #262626;
+}
+select optgroup{
+  background-color: #83732d;
+  color: antiquewhite;
+  text-align: center;
+}
 .edit{
   background-color: transparent;
   color: antiquewhite;
   font-size: 15px;
+  border: none;
 }
 .sub_menu_select{
   background-color: transparent;
