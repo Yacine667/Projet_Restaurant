@@ -850,3 +850,27 @@ td {
   border: 1px solid white;
   cursor: pointer;
 }
+.colonne{
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.edit{
+  background-color: transparent;
+  color: antiquewhite;
+  font-size: 15px;
+}
+.sub_menu_select{
+  background-color: transparent;
+  color:#83732d;
+}
+.opti{
+  display: block;
+}
+
+.hidenOption{
+  display: none;
+}
