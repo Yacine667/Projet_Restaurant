@@ -43,7 +43,7 @@ function afficherMenu($jour)
     // var_dump($_SESSION['days'][0]);
     //  si la clé "products" du tableau $-session n'existe pas OU ou cette clé existe mais ne contient aucune donnée  -->
     if (!isset($_SESSION['reservations']) || empty($_SESSION['reservations'])) {
-        echo "<p>Aucune reservation en session</p>";
+        echo "<p class='paniervidealert' style='color:white'>Aucune reservation en session</p>";
     } else {
         echo "<table>",
         "<thead>",
@@ -89,14 +89,15 @@ function afficherMenu($jour)
                         "</form>",
 
                         "<form method = POST action=traitement.php?action=changeJour&id=$index>",
-                        "<td><div class='colonne'><select name='day' class='sub_menu_select'>
-                        <option value=". $reservation['day'].">". $reservation['day'] ."</option>
-                        <option class='optionDay' value='mardi'>Mardi</option>
-                        <option class='optionDay' value='mercredi'>Mercredi</option>
-                        <option class='optionDay' value='jeudi'>Jeudi</option>
-                        <option class='optionDay' value='vendredi'>Vendredi</option>
-                        <option class='optionDay' value='samedi'>Samedi</option>
-                        <option class='optionDay' value='dimanche'>Dimanche</option>
+                        "<td><div class='colonne'>
+                        <select  name='day' id='select_day' class='sub_menu_select'>
+                        <option class='hidenOption' value=". $reservation['day'].">". $reservation['day'] ."</option>
+                        <option class='optionDay' value='mardi'>mardi</option>
+                        <option class='optionDay' value='mercredi'>mercredi</option>
+                        <option class='optionDay' value='jeudi'>jeudi</option>
+                        <option class='optionDay' value='vendredi'>vendredi</option>
+                        <option class='optionDay' value='samedi'>samedi</option>
+                        <option class='optionDay' value='dimanche'>dimanche</option>
                         </select><button class='edit' type=submit name=submitHour><i class='fa-solid fa-pen-to-square'></i></button></div></td>",
                         "</form>",
                         "<td id='champ_btn'><div class='colonne'><a href='traitement.php?action=deleteReservation&id=$index'><button class='btnsupprimer'>Annuler</button></a>
@@ -119,4 +120,7 @@ function afficherMenu($jour)
 <script src="js/script.js"></script>
 <script>compareValue();</script>
 <script>compareValueDay();</script>
+<script>cacherBtn();</script>
+
+
 </html>

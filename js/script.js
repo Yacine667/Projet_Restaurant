@@ -220,12 +220,36 @@ function compareValue(){
    }
    console.log(x)
   }
-  
-  //     console.log(s.options[s.selectedIndex].text)
 }
 
 function compareValueDay(){
   var optiDay = document.querySelectorAll('.optionDay');
   console.log(optiDay)
+  var select_day = document.getElementById('select_day')
+  var nb_option = select_day.options.length
+  console.log(nb_option)
+  console.log(select_day.options[0].text)
+  console.log(select_day.options[select_day.selectedIndex].text)
+  var i = 0;
+  while(i++ < nb_option){
+    console.log(select_day.options[i].text)
+    if((select_day.options[i].text) === (select_day.options[select_day.selectedIndex].text)){
+      optiDay[i-1].setAttribute("selected","selected");
+      console.log(select_day[i].text)
+    }
+  }
 }
 compareValueDay()
+// cacher le bouton annuler reservation quand le panier est vide
+function cacherBtn(){
+  console.log('hello word')
+  var btn = document.querySelector('.btnsupprimer')
+  var alert = document.querySelector('.paniervidealert')
+  if(alert.text = 'Aucune reservation en session'){
+  btn.style.display ='none'
+}
+  else{
+    btn.style.display ='block'
+  }
+}
+cacherBtn()
