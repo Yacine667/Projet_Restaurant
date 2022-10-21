@@ -173,58 +173,64 @@ function myFlip(item) {
 
 
 
-function cache(val){
+function cache(val) {
   //document.getElementById("sub_menu_select").disabled = true;;
-   if (val == "midi"){
+  if (val == "midi") {
 
-   document.getElementsByClassName("midi")[0].style.visibility= "visible"
-   var midi = document.getElementById("sub_menu_midi")
-   midi.name = 'horaire'
-}
-  
+    document.getElementsByClassName("midi")[0].style.visibility = "visible"
+    var midi = document.getElementById("sub_menu_midi")
+    midi.name = 'horaire'
+  }
+
   else
-     document.getElementsByClassName("midi")[0].style.visibility= "hidden"
+    document.getElementsByClassName("midi")[0].style.visibility = "hidden"
 
-   if (val == "soir"){
-     document.getElementsByClassName("soir")[0].style.visibility= "visible"
-     var soir = document.getElementById("sub_menu_soir")
-     soir.name ="horaire"
-    }
+  if (val == "soir") {
+    document.getElementsByClassName("soir")[0].style.visibility = "visible"
+    var soir = document.getElementById("sub_menu_soir")
+    soir.name = "horaire"
+  }
   else
-     document.getElementsByClassName("soir")[0].style.visibility= "hidden"
+    document.getElementsByClassName("soir")[0].style.visibility = "hidden"
 
 }
 
-function hideOpt(){
+function hideOpt() {
   // var type =document.getElementById('sub_menu_select')
   // var option = document.querySelectorAll('option')
 
   console.log('hello')
 }
 
-compareValue();
-
-function compareValue(){
+compareValueHour();
+function compareValueHour() {
   var opti = document.querySelectorAll('.option');
   console.log(opti);
-   var s =document.getElementById('select_hour');
-   var x = s.options.length;
-   console.log(x)
-   var i =0;
-  while(i++ < x ){
-  //  console.log (s.options[i].text)
-   if((s.options[i].text) ===(s.options[s.selectedIndex].text)){
-    var selectvalue = (s.options[s.selectedIndex].text);
-    // selectvalue.style.dispaly = none;
-    // opti[i-1].style.display = 'none';
-    opti[i-1].setAttribute("selected", "selected");
-    console.log(x)
-   }
-   console.log(x)
-  }
+  var selectHour = document.querySelectorAll('.select_hour');
+  console.log(selectHour.length);
+  var x = opti.length/selectHour.length;
+  console.log(x)
+  selectHour.forEach((currentSelect) => {
+    console.log(currentSelect.options[0]);
+    var i = 1;
+
+    // console.log(currentSelect);
+    while (i < x) {
+      //  console.log (currentSelect.options[i].text)
+      if ((currentSelect.options[i].text) === (currentSelect.options[0].text)) {
+        // var selectvalue = (currentSelect.options[currentSelect.selectedIndex].text);
+        // selectvalue.style.dispaly = none;
+        // opti[i-1].style.display = 'none';
+        currentSelect.options[i].setAttribute("selected", "selected");
+        
+      }
+      i++;
+    }
+
+  });
 }
 
-function compareValueDay(){
+function compareValueDay() {
   var optiDay = document.querySelectorAll('.optionDay');
   console.log(optiDay)
   var select_day = document.getElementById('select_day')
@@ -233,25 +239,25 @@ function compareValueDay(){
   console.log(select_day.options[0].text)
   console.log(select_day.options[select_day.selectedIndex].text)
   var i = 0;
-  while(i++ < nb_option){
+  while (i++ < nb_option) {
     console.log(select_day.options[i].text)
-    if((select_day.options[i].text) === (select_day.options[select_day.selectedIndex].text)){
-      optiDay[i-1].setAttribute("selected","selected");
+    if ((select_day.options[i].text) === (select_day.options[select_day.selectedIndex].text)) {
+      optiDay[i - 1].setAttribute("selected", "selected");
       console.log(select_day[i].text)
     }
   }
 }
 compareValueDay()
 // cacher le bouton annuler reservation quand le panier est vide
-function cacherBtn(){
+function cacherBtn() {
   console.log('hello word')
   var btn = document.querySelector('.btnsupprimer')
   var alert = document.querySelector('.paniervidealert')
-  if(alert.text = 'Aucune reservation en session'){
-  btn.style.display ='none'
-}
-  else{
-    btn.style.display ='block'
+  if (alert.text = 'Aucune reservation en session') {
+    btn.style.display = 'none'
+  }
+  else {
+    btn.style.display = 'block'
   }
 }
 cacherBtn()

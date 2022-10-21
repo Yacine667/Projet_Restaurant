@@ -68,16 +68,14 @@ function afficherMenu($jour)
                         "<td><div class='colonne'><a href='traitement.php?action=retirePersonne&id=$index'><i class='fa-solid fa-minus' style='color:red'></i></a>" . $reservation['clientNb'] . "<a  href='traitement.php?action=addPersonne&id=$index'><i class='fa-solid fa-plus' style='color:green'></i></a></div></td>",
 
                         "<form method = POST action=traitement.php?action=changeHour&id=$index>",
-                        "<td><div class='colonne'><select name='horaire' id='select_hour' class='sub_menu_select' >
+                        "<td><div class='colonne'><select name='horaire' class='select_hour' class='sub_menu_select' >
                         <option class='hidenOption' value=". $reservation['horaire'] ." >". $reservation['horaire'] .
                         "</option>
-                        <optgroup label='Midi'/>
                         <option class='option' value='12h00'><div class ='opti'>12h00</div></option>
                         <option class='option' value='12h30'>12h30</option>
                         <option class='option' value='13h00'>13h00</option>
                         <option class='option' value='13h30'>13h30</option>
                         <option class='option' value='14h00'>14h00</option>
-                        <optgroup label='Soir'/>
                         <option class='option' value='19h00'>19h00</option>
                         <option class='option' value='19h30'>19h30</option>
                         <option class='option' value='20h00'>20h00</option>
@@ -118,7 +116,7 @@ function afficherMenu($jour)
     </div>
 </body>
 <script src="js/script.js"></script>
-<script>compareValue();</script>
+<script>compareValueHour();</script>
 <script>compareValueDay();</script>
 <script>cacherBtn();</script>
 
