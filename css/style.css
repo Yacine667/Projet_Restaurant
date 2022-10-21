@@ -776,6 +776,7 @@ h1 {
 .map {
   border-radius: 5%;
   filter: grayscale(0.5);
+  width: 100%;
   
 }
 
