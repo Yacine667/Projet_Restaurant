@@ -6,6 +6,7 @@
   margin: 0;
   box-sizing: 0;
   font-family: "Cinzel", serif;
+  scroll-behavior: smooth;
 }
 
 
@@ -271,6 +272,9 @@ a {
   filter: grayscale(0.5);
 }
 
+/* PARTIE GALERIE */
+
+
 #galerie {
   height: 100%;
   width: 100%;
@@ -439,7 +443,7 @@ a {
   cursor: pointer;
   margin: 0px 0px 10px 0px;
   padding: 10px;
-  color: #83732d;
+  color: #ffffff;
   width: 100%;
   border-radius: 5px;
 }
@@ -459,11 +463,12 @@ a {
   transform: scaleY(0);
   float: right;
   display: block;
+  
 }
 
 .open .accordeon-contenu {
   padding: 20px;
-  background-color: transparent;
+  background-color: #262626;
   border: 1px solid rgba(255, 255, 255, 0.555);
   border-radius: 5px;
   width: 250%;
@@ -472,6 +477,7 @@ a {
   justify-content: space-around;
   transform: scaleY(1);
   transition: transform 0.8s ease;
+  color: white;
 }
 
 .open .accordeon-contenu ul {
@@ -493,6 +499,9 @@ a {
     margin-bottom: 10px;
   }
 }
+
+
+/************************************* Partie EVENEMENTS  *********************/
 
 #evenements {
   display: flex;
@@ -603,6 +612,9 @@ a {
   line-height: 1.5;
 }
 
+
+/********************************* Partie CONTACT *****************/
+
 #formulaire {
   height: 90%;
   width: 90%;
@@ -669,6 +681,8 @@ input[type="submit"]:hover {
   margin-bottom: 5%;
 }
 
+
+
 .soir{
   visibility: hidden;    
 }
@@ -703,6 +717,10 @@ input[type="submit"]:hover {
   backdrop-filter: blur(0px);
   border-radius: 10px;
   padding: 20px;
+}
+
+.contact option{
+  color : white;
 }
 
 .logo {
@@ -791,18 +809,24 @@ h1 {
 }
 
 footer {
+
+  margin-top: 5%;
+  padding: 20px;
   background-color: #262626;
   min-width: 99vw;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  gap: 10%;
+  gap: 0%;
   color: #83732d;
   font-size: 1em;
+  font-size: larger;
+  width: 100%;
 }
 
 footer a {
   color: #83732d;
+  font-size: larger;
 }
 
 

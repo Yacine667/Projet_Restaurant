@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <?php
   session_start();
-   $mardi =["MardiEntree"=>"Soupe à la courgette","MardiPP"=>"Brochettes de boeuf/agneau saveur citronée","MardiDessert"=>"Tarte au citron meringuée"];
 
-  // $mardi =array("MardiEntree"=>"Soupe à la courgette","MardiPP"=>"Brochettes de boeuf/agneau saveur citronée","MardiDessert"=>"Tarte au citron meringuée");
+  $mardi =["MardiEntree"=>"Soupe à la courgette","MardiPP"=>"Brochettes de boeuf/agneau saveur citronée","MardiDessert"=>"Tarte au citron meringuée"];
   $mercredi =array("mercrediEntree"=>"Tomates farcies au four","mercrediPP"=>"Lasagbes à la bolognaise","mercrediDessert"=>"Fondant chocolat coeur coulant");
   $jeudi =array("jeudiEntree"=>"Galettes de flocons d'avoine au fromages","jeudiPP"=>"Risotto aux champignons et crevettes","jeudiDessert"=>"Créme brulée rapide");
   $vendredi =array("vendrediEntree"=>"Mini vols au poulet","vendrediPP"=>"Maquereaux marinés au basilic cuits à la plancha","vendrediDessert"=>"Mousse au chocolat");
